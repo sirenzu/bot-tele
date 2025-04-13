@@ -5,7 +5,7 @@ from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandl
 
 # Logging
 logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
-logger = logging.getLogger(_name_)
+logger = logging.getLogger(__name__)
 
 # Token bot kamu
 TOKEN_BOT = '7617338678:AAGIiXBYiMZ2SQzag1ZsjkxaxABHMfZdb-g'
@@ -50,6 +50,6 @@ async def main():
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, fetch_video))
     await application.run_polling()
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     import asyncio
     asyncio.run(main())
